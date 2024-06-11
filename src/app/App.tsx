@@ -2,15 +2,14 @@ import React from 'react';
 import './App.css';
 import Alist from "../side-component/Alist";
 import Blist from "../side-component/Blist";
-import {render} from "@testing-library/react";
-
-function App() {
+import WithDataComponent from "../data/WithDataComponent";
+const url:string = 'https://jsonplaceholder.typicode.com/users';
+const App = () =>  {
     return (
-        render(
-            <div>
-                <Alist></Alist>
-                <Blist></Blist>
-            </div>)
+        <div>
+            <WithDataComponent Component={Alist} url={url}></WithDataComponent>
+            <WithDataComponent Component={Blist} url={url}></WithDataComponent>
+        </div>
     )
 }
 

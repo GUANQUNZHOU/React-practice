@@ -1,22 +1,15 @@
-import {useEffect,useState} from "react";
-interface check{
-    name:string;
+import Information from "../resource/Interfaces";
+
+
+interface DisplayData{
+    data:Information[];
 }
 
-const Alist = () => {
-    const [list, setList] = useState<check[]>([]);
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
-            .then(data => {
-                const names = data.map((user: { name: string; }) => user.name);
-                setList(names);
-            });
-    }, []);
+const Alist = (displayData: DisplayData) => {
     return (
         <ul>
-            {list.map((check,index) => (
-                <li key={index}>{check.name}</li>
+            {displayData.data.map((information,index) => (
+                <li key={index}>{information.name}</li>
             ))}
         </ul>
     );
