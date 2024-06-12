@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
+import ListItems from "./list-and-key/ListItems";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-    <App></App>
+    <div>{ListItems}</div>
 );
 
 // If you want to start measuring performance in your app, pass a function
